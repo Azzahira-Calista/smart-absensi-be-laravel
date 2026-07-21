@@ -21,7 +21,7 @@ return new class extends Migration
             // Tambahkan 3 kolom ini untuk kebutuhan fitur magang & absensi
             $table->string('satuan_kerja')->nullable(); 
             $table->string('status_magang')->nullable();
-            $table->string('device_id')->nullable(); 
+            $table->string('device_id')->nullable()->unique(); // Untuk proteksi device binding
 
             $table->rememberToken();
             $table->timestamps();

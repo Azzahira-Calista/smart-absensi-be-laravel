@@ -6,6 +6,8 @@ use App\Models\User;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Schema; // Tambahkan ini
+use App\Models\Attendance;
+use App\Models\Location;
 
 class DatabaseSeeder extends Seeder
 {
@@ -13,7 +15,11 @@ class DatabaseSeeder extends Seeder
     {
         // Matikan sementara pengecekan foreign key agar truncate aman
         Schema::disableForeignKeyConstraints();
-        User::truncate(); 
+
+        Attendance::truncate();
+        Location::truncate();
+        User::truncate();
+
         Schema::enableForeignKeyConstraints();
 
         User::create([

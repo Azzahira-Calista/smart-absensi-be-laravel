@@ -47,7 +47,7 @@ class LocationSeeder extends Seeder
             'id' => 1,
             'name' => 'Kompleks DPR RI',
             'type' => 'Mapping',
-            'polygon_coords' => json_encode($dprCoords)
+            'polygon_coords' => $dprCoords
         ]);
 
         // 2. Data Beberapa Titik Tunggal (Tipe Radius)

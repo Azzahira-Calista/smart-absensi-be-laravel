@@ -6,12 +6,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class Attendance extends Model
 {
-    // Tentukan nama tabel jika nama tabel Anda di database bukan "attendances"
-    // protected $table = 'attendances';
-
-    /**
-     * Kolom yang diizinkan untuk diisi secara massal (Mass Assignment).
-     */
     protected $fillable = [
         'user_id',
         'location_id',
@@ -22,14 +16,10 @@ class Attendance extends Model
         'status',
         'device_id',
         'is_mock_location',
-        'note',
+        'notes',
         'attachment_path',
     ];
-
-    /**
-     * Konversi tipe data otomatis (Casting).
-     * Ini penting agar is_mock_location benar-benar dibaca sebagai boolean (true/false) oleh database.
-     */
+    
     protected $casts = [
         'is_mock_location' => 'boolean',
         'user_latitude' => 'double',
