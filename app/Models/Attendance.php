@@ -25,4 +25,12 @@ class Attendance extends Model
         'user_latitude' => 'double',
         'user_longitude' => 'double',
     ];
+
+    protected $guarded = ['id'];
+
+    // Relasi 1-to-1 (atau HasMany jika 1 absen bisa banyak lampiran)
+    public function proof()
+    {
+        return $this->hasOne(AttendanceProof::class, 'attendance_id');
+    }
 }

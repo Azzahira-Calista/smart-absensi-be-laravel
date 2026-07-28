@@ -13,11 +13,6 @@ return new class extends Migration
 
         $table->foreignId('user_id')->constrained()->cascadeOnDelete();
 
-        $table->foreignId('location_id')
-            ->nullable()
-            ->constrained()
-            ->nullOnDelete();
-
         $table->enum('action_type', [
             'CHECK_IN',
             'CHECK_OUT'
@@ -40,13 +35,7 @@ return new class extends Migration
             'PENDING_APPROVAL'
         ]);
 
-        $table->boolean('is_mock_location')->default(false);
-
         $table->string('device_id');
-
-        $table->text('notes')->nullable();
-
-        $table->string('attachment_path')->nullable();
 
         $table->timestamps();
     });
